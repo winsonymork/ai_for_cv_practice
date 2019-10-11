@@ -3,9 +3,12 @@ import math
 import cv2 as cv
 import random
 import math
+import os
 import copy
 from matplotlib import pyplot as plt
 
+
+f = input("pls enter the path of  your pic:")
 
 # 准备素材
 def changeBGR2RGB(img):
@@ -13,7 +16,7 @@ def changeBGR2RGB(img):
     return cv.merge((R, G, B))
 
 # img = changeBGR2RGB(cv.imread(r'F:/1.jpg'))
-img = cv.imread(r'F:/1.jpg')
+img = cv.imread(f)
 
 # plt.imshow(img)
 # 裁剪 crop   start: 开始坐标   w：宽  h:高
@@ -142,7 +145,9 @@ def together(img):
 img = together(img)
 plt.imshow(img)
 
-cv.imshow('lenna', img)
-key = cv.waitKey()
-if key == 27:
-    cv.destroyAllWindows()
+# cv.imshow('lenna', img)
+# key = cv.waitKey()
+# if key == 27:
+#     cv.destroyAllWindows()
+outpath= os.path.dirname(f)
+cv.imwrite(outpath+"GEN.jpg",img)
