@@ -143,7 +143,7 @@ def together(img):
 
 
 img = together(img)
-plt.imshow(img)
+#plt.imshow(img)
 
 # cv.imshow('lenna', img)
 # key = cv.waitKey()
