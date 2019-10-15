@@ -16,7 +16,7 @@ def media(args):
     return(args[mediaIdx])
 
 #采用边缘像素不计算中位数，不使用padding的方法
-def towDimElemMedia(ary,row,col):
+def twoDimElemMedia(ary,row,col):
     arows = len(ary)
     acols = len(ary[0])
     #边缘不计算
@@ -34,7 +34,7 @@ def mediaChannelFilter(channel):
     col = len(channel[0])
     for rIdx,row in enumerate(channel):
         for cIdx,cellValue in enumerate(row):
-            towDimElemMedia(channel,rIdx,cIdx)
+            twoDimElemMedia(channel,rIdx,cIdx)
 
             
 # 中位数滤镜实现
